@@ -20,6 +20,7 @@ namespace View
             comboBox1.SelectedIndex = 0;
         }
 
+        // Кнопка добавить
         private void addButton_Click(object sender, EventArgs e)
         {
             AddForm addForm = new AddForm(comboBox1.Text);
@@ -33,6 +34,7 @@ namespace View
             dataGridView1.Rows.Add(addForm.Result);
         }
 
+        // Кнопка удалить
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -43,12 +45,14 @@ namespace View
             dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
         }
 
+        // Кнопка поиск
         private void searchButton_Click(object sender, EventArgs e)
         {
             SearchForm search = new SearchForm(dataGridView1);
             search.ShowDialog();
         }
 
+        // Кнопка сохранить
         private void saveButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog fd = new SaveFileDialog();
@@ -80,6 +84,7 @@ namespace View
             }
         }
 
+        // Кнопка загрузить
         private void loadButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog fd = new OpenFileDialog
