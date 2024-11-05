@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\HelicopterTest.cs" />
+    <Compile Include="Model\HybridTest.cs" />
+    <Compile Include="Model\VehicleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

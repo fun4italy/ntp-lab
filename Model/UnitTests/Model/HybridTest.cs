@@ -8,10 +8,10 @@ using Model;
 namespace UnitTests.Model
 {
     /// <summary>
-    /// Набор тестов для класса Helicopter
+    /// Набор тестов для класса Hybrid
     /// </summary>
     [TestFixture]
-    internal class HelicopterTest
+    internal class HybridTest
     {
         /// <summary>
         /// Тестирование свойства FuelConsumption
@@ -32,40 +32,12 @@ namespace UnitTests.Model
             {
                 Assert.Throws<ArgumentException>(() =>
                 {
-                    _ = new Helicopter(consumption, 100.0);
+                    _ = new Hybrid(consumption);
                 });
             }
             else
             {
-                _ = new Helicopter(consumption, 100.0);
-            }
-        }
-
-        /// <summary>
-        /// Тестирование свойства Speed
-        /// </summary>
-        /// <param name="speed"></param>
-        [Test]
-        [TestCase(1.0, TestName = "Тестирование Speed при присваивании 1.0")]
-        [TestCase(10.0, TestName = "Тестирование Speed при присваивании 10.0")]
-        [TestCase(100.0, TestName = "Тестирование Speed при присваивании 100.0")]
-        [TestCase(double.MaxValue - 1.0, TestName = "Тестирование Speed при присваивании MaxValue-1.0")]
-        [TestCase(double.MaxValue, TestName = "Тестирование Speed при присваивании MaxValue")]
-        [TestCase(0.0, TestName = "Тестирование Speed при присваивании 0.0")]
-        [TestCase(-1.0, TestName = "Тестирование Speed при присваивании -1.0")]
-        [TestCase(double.MinValue, TestName = "Тестирование Speed при присваивании MinValue")]
-        public void SpeedTest(double speed)
-        {
-            if (speed <= 0)
-            {
-                Assert.Throws<ArgumentException>(() =>
-                {
-                    _ = new Helicopter(100.0, speed);
-                });
-            }
-            else
-            {
-                _ = new Helicopter(100.0, speed);
+                _ = new Hybrid(consumption);
             }
         }
 
@@ -81,7 +53,7 @@ namespace UnitTests.Model
         [TestCase(double.MinValue, ExpectedResult = double.NaN, TestName = "Тестирование FuelByDistance при distance = MinValue")]
         public double FuelByDistanceTest(double distance)
         {
-            var obj = new Helicopter(100.0, 100.0);
+            var obj = new Hybrid(100.0);
 
             if (distance <= 0)
             {
